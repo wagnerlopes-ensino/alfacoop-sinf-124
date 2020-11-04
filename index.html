@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <style>
         *{box-sizing:border-box;}
-        .myHeader{ text-align: center; vertical-align: middle; margin-top:46px}
+        /*.myDivStyle{border: 2px outset red; border-style: dashed; overflow: auto; }*/
+        .myHeader{ text-align: center; vertical-align: middle; margin-top:46px; }
         .left {background-color:#2196F3; padding:20px;float:left; width:20%; /* The width is 20%, by default */}
         .main {background-color:#f1f1f1; padding:20px;float:left; width:60%; /* The width is 60%, by default */}
         .right {background-color:#4CAF50; padding:20px; float:left; width:20%; /* The width is 20%, by default */}
@@ -52,10 +53,10 @@
 
     
  <!--CABEÇALHO-->
-<div class="myHeader">
-    <h2 style="font-size:5vw">Alfacoop 2020/2021 Sistemas de Informação</h2>
-    <h3 style="font-size:3vw">Turma 12.4 Técnico de Multimedia</h3>
-    <span>Professor Wagner Lopes</span>
+<div class="myHeader myDivStyle">
+    <h2 class="myDivStyle" style="font-size:5vw">Alfacoop 2020/2021 Sistemas de Informação</h2>
+    <h3 class="myDivStyle" style="font-size:3vw">Turma 12.4 Técnico de Multimedia</h3>
+    <span class="myDivStyle">Professor Wagner Lopes</span>
 </div>
 
 <!-- HOME -->
@@ -66,15 +67,12 @@
 </div>
 
 <!--Conteúdo Responsivo-->
-<div class="left"><p>Left Menu</p></div>
-<div class="main"><p>Main Content</p></div>
-<div class="right"><p>Right Content</p></div>
-<div class="left"><p>Left Menu</p></div>
-<div class="main"><p>Main Content</p></div>
-<div class="right"><p>Right Content</p></div>
-<div class="left"><p>Left Menu</p></div>
-<div class="main"><p>Main Content</p></div>
-<div class="right"><p>Right Content</p></div>
+<div class="myDivStyle" >
+  <div class="left"><p>Left Menu</p></div>
+  <div class="main"><p>Main Content</p></div>
+  <div class="right"><p>Right Content</p></div>
+  
+</div>
   
 <!-- ABOUT -->
 <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="sobre">
