@@ -19,38 +19,43 @@
         @media screen and (max-width:800px) {
             .left, .main, .right { width:100%; /* The width is 100%, when the viewport is 800px or smaller */}
         }
+
+        table {font-family: arial, sans-serif; border-collapse: collapse; width: 2; width: 100%; padding: 20;}
+        td, th, tr {border: 2px solid #f08a5d; text-align: center; padding: 8px;}
     </style>
+    <!-- <script src="https://www.w3schools.com/lib/w3data.js"></script> -->
+      <script type="text/javascript">
+          window.onload = function() {
+            //w3IncludeHTML();
+          }
+      </script>
 </head>
 <body>
-
 <!-- Navbar -->
-<!-- <div class="w3-top">
+<div class="w3-top">
     <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="#sobre" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SOBRE</a>
-      <a href="#sinf" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SINF</a>
-      <a href="#interesses" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INTERESSES</a>
+      <!-- <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> -->
+      <a class="w3-bar-item w3-button w3-padding-large" onclick="mostraDiv('home');">HOME</a>
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="mostraDiv('sobre');">SOBRE</a>
+      <a href="#sinf" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="mostraDiv('sinf');">SINF</a>
+      <a href="#interesses" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="mostraDiv('interesses');">INTERESSES</a>
       <div class="w3-dropdown-hover ">
         <button class="w3-padding-large w3-button" title="More">TRABALHOS <i class="fa fa-caret-down"></i></button>     
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="#" class="w3-bar-item w3-button">Tabelas HTML</a>
+          <a class="w3-bar-item w3-button"  onclick="mostraDiv('tabela');">Tabelas HTML</a>
           <a href="#" class="w3-bar-item w3-button">...</a>
           <a href="#" class="w3-bar-item w3-button">...</a>
         </div>
       </div>
       <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
     </div>
-  </div> -->
-  
+  </div>
   <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
   <!-- <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:40px">
-    <a href="#sobre" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SOBRE</a>
-    <a href="#sinf" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SINF</a>
-    <a href="#interesses" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">INTERESSES</a>
+    <a href="#sobre" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction(); mostraDiv('sobre');">SOBRE</a>
+    <a href="#sinf" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction(); mostraDiv('sinf');">SINF</a>
+    <a href="#interesses" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction(); mostraDiv('interesses');">INTERESSES</a>
   </div> -->
-  
-
     
  <!--CABEÇALHO-->
 <div class="myHeader myDivStyle">
@@ -59,37 +64,136 @@
     <span class="myDivStyle">Professor Wagner Lopes</span>
 </div>
 
+<!--Área principal da página-->
 <!-- HOME -->
-<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="home">
+<div class="w3-container w3-content w3-center w3-padding-64 w3-hide w3-show" style="max-width:800px" id="home">
   <h2 class="w3-wide">HOME</h2>
   <p class="w3-opacity"><i>Portfólio de trabalhos HTML</i></p>
   <p class="w3-justify">Esta página serve de apresentação dos trabalhos e exercícios de html que realizo nas aulas de Sistemnas de informação.</p>
 </div>
 
 <!--Conteúdo Responsivo-->
+<div id="responsivo" class=" w3-hide">
 <div class="myDivStyle" >
   <div class="left"><p>Left Menu</p></div>
   <div class="main"><p>Main Content</p></div>
   <div class="right"><p>Right Content</p></div>
-  
 </div>
-  
+<div class="myDivStyle" >
+  <div class="left"><p>Left Menu</p></div>
+  <div class="main"><p>Main Content</p></div>
+  <div class="right"><p>Right Content</p></div>
+</div>
+<div class="myDivStyle" >
+  <div class="left"><p>Left Menu</p></div>
+  <div class="main"><p>Main Content</p></div>
+  <div class="right"><p>Right Content</p></div>
+</div>
+</div>
+
 <!-- ABOUT -->
-<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="sobre">
+<div class="w3-container w3-content w3-center w3-padding-64 w3-hide" style="max-width:800px" id="sobre">
   <h2 class="w3-wide">SOBRE</h2>
   <p class="w3-opacity"><i>Página destinada à apresentação do aluno, com fotografi, dados pessoais e interesses. </i></p>
 </div>
 
+<div id="tabela" class="w3-container w3-content w3-center w3-padding-64 w3-hide">
+  <h2 class="w3-wide">TABELAS</h2>
+
+<table  cellpadding=3> </td>
+    <tr>
+      <th>Nome da música</th>
+      <th>Nome do Anime</th>
+      <th>Link</th>
+    </tr>
+    <tr>
+      <td>Shinzou wo Sasageyo</td>
+      <td>Attack on Titan Temporada 2</td>
+      <td><a href="https://www.youtube.com/watch?v=CID-sYQNCew">LINK</a></td>
+    </tr>
+    <tr>
+      <td>Ignite</td>
+      <td>Sword Art Online Temporada 2</td>
+      <td><a href="https://www.youtube.com/watch?v=frw21EeOrV0">LINK</a></td>
+    </tr>
+    <tr>
+      <td>Kibou no Uta</td>
+      <td>Shokugeki no Souma Temporada 1</td>
+      <td><a href="https://www.youtube.com/watch?v=vV3l_1j8pPE&">LINK</a></td>
+    </tr>
+    <tr>
+      <td>Kiss of Death</td>
+      <td>Darling in the FranXX Temporada 1</td>
+      <td><a href="https://www.youtube.com/watch?v=6jmmz5iLI10">LINK</a></td>
+    </tr>
+    <tr>
+      <td>Asphyxia</td>
+      <td>Tokyo Ghoul Temporada 3 Parte 1</td>
+      <td><a href="https://www.youtube.com/watch?v=ylVhAMLdPNs">LINK</a></td>
+    </tr>
+    <tr>
+    <td colspan=3>Nota: Com esta tabela pretende-se apresentar certas aberturas de animes</td>
+    </tr>
+  </table>
+  
+</div>
 <script>
+
     // Used to toggle the menu on small screens when clicking on the menu button
-    function myFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else { 
-        x.className = x.className.replace(" w3-show", "");
+    // function myFunction() {
+    //   var x = document.getElementById("navDemo");
+    //   if (x.className.indexOf("w3-show") == -1) {
+    //     x.className += " w3-show";
+    //   } else { 
+    //     x.className = x.className.replace(" w3-show", "");
+    //   }
+    // };
+
+    function mostraDiv(divId){
+
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        if(z[i].id != "") { 
+          if(z[i].id != divId) {
+            z[i].classList.remove("w3-show");
+          }
+          else {
+            if (z[i].className.indexOf("w3-show") == -1) {
+              z[i].className += " w3-show";
+            }
+          }
+        }
       }
-    }
+    };
+
+    // function w3IncludeHTML() {
+    //   var z, i, elmnt, file, xhttp;
+    //   /*loop through a collection of all HTML elements:*/
+    //   z = document.getElementsByTagName("*");
+    //   for (i = 0; i < z.length; i++) {
+    //     elmnt = z[i];
+    //     /*search for elements with a certain atrribute:*/
+    //     file = elmnt.getAttribute("w3-include-html");
+    //     if (file) {
+    //       /*make an HTTP request using the attribute value as the file name:*/
+    //       xhttp = new XMLHttpRequest();
+    //       xhttp.onreadystatechange = function() {
+    //         if (this.readyState == 4) {
+    //         if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+    //         if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+    //         /*remove the attribute, and call this function once more:*/
+    //         elmnt.removeAttribute("w3-include-html");
+    //         w3IncludeHTML();
+    //       }
+    //     }      
+    //     xhttp.open("GET", file, true);
+    //     xhttp.send();
+    //     /*exit the function:*/
+    //     return;
+    //     }
+    //   }
+    // };
+
 </script>
 </body>
 </html>
