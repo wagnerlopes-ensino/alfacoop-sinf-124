@@ -14,6 +14,7 @@
         .left {background-color:#2196F3; padding:20px;float:left; width:20%; /* The width is 20%, by default */}
         .main {background-color:#f1f1f1; padding:20px;float:left; width:60%; /* The width is 60%, by default */}
         .right {background-color:#4CAF50; padding:20px; float:left; width:20%; /* The width is 20%, by default */}
+        .container {display: flex; align-items: center; justify-content: center; }
 
         /* Use a media query to add a break point at 800px: */
         @media screen and (max-width:800px) {
@@ -44,6 +45,7 @@
         <div class="w3-dropdown-content w3-bar-block w3-card-4">
           <a class="w3-bar-item w3-button"  onclick="mostraDiv('tabela');">Tabelas HTML</a>
           <a class="w3-bar-item w3-button"  onclick="mostraDiv('responsivo');">DIVs Responsivas</a>
+          <a class="w3-bar-item w3-button"  onclick="mostraDiv('BusinessCard');">Business Card</a>
           <a href="#" class="w3-bar-item w3-button">...</a>
         </div>
       </div>
@@ -138,7 +140,61 @@
   </table>
   
 </div>
+
+<div id="BusinessCard" class="w3-container  w3-hide">
+  <div class=" " style="float: left; padding-top: 60px;">
+    <div style="padding: 10px;">
+        <h3>Gerador de Cartões de Negócio da AUDI Portugal</h3>
+        <div style="float: left; padding-left: 5px; width: 250px;">Nome: <input id="nameInput" placeholder="Nome" value=""/></div>
+        <div style="float: left; padding-left: 5px; width: 250px;">Cargo: <input id="jobInput" placeholder="Cargo" value=""/></div> 
+        <div style="float: left; padding-left: 5px; width: 250px;">Email: <input id="emailInput" placeholder="Email" value=""/></div> 
+        <div style="float: left; padding-left: 5px; width: 250px;">Telemóvel: <input id="phoneInput" placeholder="Número de Telemóvel" value=""/></div> 
+        <input type="button" value="Gerar Cartão" onclick="genCard();"/>
+        <input type="button" value="Limpar Cartão" onclick="resetCard();"/>
+
+    </div>
+    
+    <div class="" style="padding: 10px;">
+        <div style="float: left;">
+            <h4>Frente</h4>
+            <div style="background-color: #333232; padding: 20px; text-align: left; width: 500px; height: 300px; ">
+              <img style="width: 150px;" src="images\logos-audi.png"/>
+              <div style="display: flexbox; height: auto; align-items: bottom; ">
+                <h6 id="businessCardName" style="color: darkgrey; font-weight: lighter;">.</h6>
+                <h6 id="businessCardJob" style="color: darkgrey; font-weight: lighter;">.</h6>
+                <h6 id="businessCardEmail" style="color: darkgrey; font-weight: lighter;">.</h6>
+                <h6 id="businessCardPhone" style="color: darkgrey; font-weight: lighter;">.</h6>
+                <h6 id="businessCardWebsite" style="color: darkgrey; font-weight: lighter;">audi.pt</h6>
+              </div>
+            </div>
+        </div>
+        <div style="float: left; width: 10px; display: grid;">&nbsp;</div>
+        <div style="float: left;">
+            <h4>Verso</h4>
+            <div class="container" style="background-color: #333232; padding: 30px; text-align: center; width: 500px; height: 300px; ">
+                <!-- <img style="padding-top: 50px; width: 150px;" src="images\beauty-rings-logo-gold.png"/> -->
+                <h4 style="color: darkgrey; font-weight: lighter; ">O FUTURO É UMA ATITUDE</h4>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
 <script>
+
+  function genCard(){
+    document.getElementById('businessCardName').innerHTML = document.getElementById('nameInput').value;
+    document.getElementById('businessCardJob').innerHTML = document.getElementById('jobInput').value;
+    document.getElementById('businessCardEmail').innerHTML = document.getElementById('emailInput').value;
+    document.getElementById('businessCardPhone').innerHTML = document.getElementById('phoneInput').value;
+  }
+  function resetCard(){
+    document.getElementById('businessCardName').innerHTML = '.';
+    document.getElementById('businessCardJob').innerHTML = '.';
+    document.getElementById('businessCardEmail').innerHTML = '.';
+    document.getElementById('businessCardPhone').innerHTML = '.';
+  }
 
     // Used to toggle the menu on small screens when clicking on the menu button
     // function myFunction() {
