@@ -46,6 +46,7 @@
           <a class="w3-bar-item w3-button"  onclick="mostraDiv('tabela');">Tabelas HTML</a>
           <a class="w3-bar-item w3-button"  onclick="mostraDiv('responsivo');">DIVs Responsivas</a>
           <a class="w3-bar-item w3-button"  onclick="mostraDiv('BusinessCard');">Business Card</a>
+          <a class="w3-bar-item w3-button"  onclick="mostraDiv('UploadImage');">Carregar Imagem</a>
           <a href="#" class="w3-bar-item w3-button">...</a>
         </div>
       </div>
@@ -181,7 +182,36 @@
 
 </div>
 
+<div id="UploadImage" class="w3-container w3-hide">
+  <h3>Upload Image</h3>
+  <input type="file" id="file-selector" accept=".jpg, .jpeg, .png" onchange='openFile(event)'>
+  <p id="status">Status</p>
+  <div>
+    <img id="output">
+  </div>
+</div>
+
 <script>
+
+  var stateNames = {};
+  stateNames[FileReader.EMPTY]   = 'EMPTY';
+  stateNames[FileReader.LOADING] = 'LOADING';
+  stateNames[FileReader.DONE]    = 'DONE';
+
+  var openFile = function(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      document.getElementById('status').innerHTML += '<br> After load: ' + stateNames[reader.readyState];
+      var dataURL = reader.result;
+      var output = document.getElementById('output');
+      output.src = dataURL;
+    };
+    document.getElementById('status').innerHTML += '<br> Before read: ' + stateNames[reader.readyState];
+    reader.readAsDataURL(input.files[0]);
+    document.getElementById('status').innerHTML += '<br> After read: ' + stateNames[reader.readyState];
+  };
 
   function genCard(){
     document.getElementById('businessCardName').innerHTML = document.getElementById('nameInput').value;

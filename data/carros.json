@@ -1,0 +1,10 @@
+{
+    "carros": [
+        {"marca": "Audi", "modelo": "A3", "cor":"preto", "ano": 2017, "kms": 75000},
+        {"marca": "BMW", "modelo": "320 d", "cor":"cinza prata", "ano": 2015, "kms": 90000},
+        {"marca": "VW", "modelo": "Golf", "cor":"vermelho", "ano": 2010, "kms": 175000},
+        {"marca": "Peugeot", "modelo": "2008", "cor":"azul", "ano": 2017, "kms": 120000},
+        {"marca": "Critroen", "modelo": "2CV", "cor":"beje", "ano": 1985, "kms": 275000},
+        {"marca": "Mercedes-Bens", "modelo": "C250 coupé", "cor":"preto", "ano": 2018, "kms": 75000}
+    ]
+}
