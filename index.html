@@ -185,7 +185,8 @@
 <div id="UploadImage" class="w3-container w3-hide">
   <h3>Upload Image</h3>
   <input type="file" id="file-selector" accept=".jpg, .jpeg, .png" onchange='openFile(event)'>
-  <p id="status">Status</p>
+  <p id="">Status</p>
+  <p id="status"></p>
   <div>
     <img id="output">
   </div>
@@ -208,7 +209,7 @@
       var output = document.getElementById('output');
       output.src = dataURL;
     };
-    document.getElementById('status').innerHTML += '<br> Before read: ' + stateNames[reader.readyState];
+    document.getElementById('status').innerHTML = ' Before read: ' + stateNames[reader.readyState];
     reader.readAsDataURL(input.files[0]);
     document.getElementById('status').innerHTML += '<br> After read: ' + stateNames[reader.readyState];
   };
