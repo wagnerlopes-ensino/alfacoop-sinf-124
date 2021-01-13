@@ -34,7 +34,7 @@
 <body>
 <!-- Navbar -->
 <div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
+    <div class="w3-bar w3-black ">
       <!-- <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> -->
       <a class="w3-bar-item w3-button w3-padding-large" onclick="mostraDiv('home');">HOME</a>
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="mostraDiv('sobre');">SOBRE</a>
@@ -204,14 +204,14 @@
 
     var reader = new FileReader();
     reader.onload = function(){
-      document.getElementById('status').innerHTML += '<br> After load: ' + stateNames[reader.readyState];
+      document.getElementById('status').innerHTML += '<br> After load: ' + stateNames[reader.readyState] + ' - ' + Date.now();
       var dataURL = reader.result;
       var output = document.getElementById('output');
       output.src = dataURL;
     };
-    document.getElementById('status').innerHTML = ' Before read: ' + stateNames[reader.readyState];
+    document.getElementById('status').innerHTML = ' Before read: ' + stateNames[reader.readyState] + ' - ' + Date.now();
     reader.readAsDataURL(input.files[0]);
-    document.getElementById('status').innerHTML += '<br> After read: ' + stateNames[reader.readyState];
+    document.getElementById('status').innerHTML += '<br> After read: ' + stateNames[reader.readyState] + ' - ' + Date.now();
   };
 
   function genCard(){
