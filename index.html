@@ -204,14 +204,14 @@
 
     var reader = new FileReader();
     reader.onload = function(){
-      document.getElementById('status').innerHTML += '<br> After load: ' + stateNames[reader.readyState] + ' - ' + Date.now();
+      document.getElementById('status').innerHTML += '<br> After load: ' + stateNames[reader.readyState];
       var dataURL = reader.result;
       var output = document.getElementById('output');
       output.src = dataURL;
     };
-    document.getElementById('status').innerHTML = ' Before read: ' + stateNames[reader.readyState] + ' - ' + Date.now();
+    document.getElementById('status').innerHTML = ' Before read: ' + stateNames[reader.readyState];
     reader.readAsDataURL(input.files[0]);
-    document.getElementById('status').innerHTML += '<br> After read: ' + stateNames[reader.readyState] + ' - ' + Date.now();
+    document.getElementById('status').innerHTML += '<br> After read: ' + stateNames[reader.readyState];
   };
 
   function genCard(){
