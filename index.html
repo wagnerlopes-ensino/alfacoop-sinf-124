@@ -50,6 +50,12 @@
           <a href="#" class="w3-bar-item w3-button">...</a>
         </div>
       </div>
+      <div class="w3-dropdown-hover ">
+        <button class="w3-padding-large w3-button" title="More">CRYPTO <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+          <a class="w3-bar-item w3-button"  onclick="mostraDiv('cryptolist');">COIN LIST</a>
+        </div>
+      </div>
       <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
     </div>
   </div>
@@ -73,6 +79,12 @@
   <h2 class="w3-wide">HOME</h2>
   <p class="w3-opacity"><i>Portfólio de trabalhos HTML</i></p>
   <p class="w3-justify">Esta página serve de apresentação dos trabalhos e exercícios de html que realizo nas aulas de Sistemnas de informação.</p>
+</div>
+
+<!-- CRYPTO COINS LIST-->
+<div id="cryptolist" class="w3-container w3-content w3-center w3-padding-64 w3-hide">
+  <script src="https://widgets.coingecko.com/coingecko-coin-list-widget.js"></script>
+<coingecko-coin-list-widget  coin-ids="bitcoin,eos,ethereum,litecoin,ripple,kadena,flux,cardano,the-graph,polkadot" currency="eur" locale="pt"></coingecko-coin-list-widget>
 </div>
 
 <!--Conteúdo Responsivo-->
